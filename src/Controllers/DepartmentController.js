@@ -27,7 +27,8 @@ exports.getDepartment = (req, res) => {
   });
 };
 exports.singleDepartmet = (req, res) => {
-  DepartmentModel.findOne({ _id: req.body.id }, (err, data) => {
+  console.log(req.body._id);
+  DepartmentModel.findOne({ _id: req.body._id }, (err, data) => {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {

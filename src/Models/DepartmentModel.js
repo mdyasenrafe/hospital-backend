@@ -12,15 +12,16 @@ const Department = new Schema({
   },
   photo1: {
     type: String,
+  },
+  fee: {
+    type: String,
     required: true,
   },
   treatment: {
     type: String,
-    required: true,
   },
   symptoms: {
     type: Array,
-    required: true,
   },
   shortDescription: {
     type: String,
@@ -28,11 +29,9 @@ const Department = new Schema({
   },
   fullDescription: {
     type: String,
-    required: true,
   },
   causes: {
     type: String,
-    required: true,
   },
 });
 
