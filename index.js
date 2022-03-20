@@ -51,7 +51,7 @@ app.use((req, res, next) => {
 });
 // first route
 app.get("/", (req, res) => {
-  res.send("<h1>This is Medicare server</h1>");
+  res.send("This is Medicare server");
 });
 
 //   test
