@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const departmentRoute = require("./src/Routes/DepartmentRoute");
 const doctorRoute = require("./src/Routes/DoctorRoute");
 const reviewRoute = require("./src/Routes/ReviewRoute");
+const userRoute = require("./src/Routes/UserRoute");
 
 require("dotenv").config();
 const port = process.env.PORT || 5001;
@@ -44,6 +45,7 @@ app.all("*", function (req, res, next) {
 app.use("/departments", departmentRoute);
 app.use("/review", reviewRoute);
 app.use("/doctor", doctorRoute);
+app.use("/user", userRoute);
 // first route
 app.get("/", (req, res) => {
   res.send("This is Medicare server");

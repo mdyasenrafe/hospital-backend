@@ -6,10 +6,6 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-  photo: {
-    type: String,
-    required: true,
-  },
   phoneNumber: {
     type: String,
     required: true,
@@ -17,6 +13,14 @@ const UserSchema = new Schema({
   email: {
     type: String,
     required: true,
+  },
+  phoneNumber: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    default: "user",
   },
 });
 
