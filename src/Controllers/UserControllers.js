@@ -17,21 +17,18 @@ exports.PostUser = async (req, res) => {
   });
 };
 exports.GetUser = async (req, res) => {
-  UserModel.findOne(
-    { id: req.body._id, email: req.body.email },
-    (err, data) => {
-      if (err) {
-        res.status(400).json({
-          error: true,
-          message: err,
-        });
-      } else {
-        res.status(200).json({
-          error: false,
-          data: data,
-          message: "data fetch successfully",
-        });
-      }
+  UserModel.findOne({ email: req.body.email }, (err, data) => {
+    if (err) {
+      res.status(400).json({
+        error: true,
+        message: err,
+      });
+    } else {
+      res.status(200).json({
+        error: false,
+        data: data,
+        message: "data fetch successfully",
+      });
     }
-  );
+  });
 };
