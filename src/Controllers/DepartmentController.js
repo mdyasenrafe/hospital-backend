@@ -13,17 +13,29 @@ exports.postDepartment = (req, res) => {
     }
   });
 };
-exports.getDepartment = (req, res) => {
-  DepartmentModel.find((err, data) => {
+exports.getDepartment = async (req, res) => {
+  let pageNo = parseInt(req.query.page);
+  let size = parseInt(req.query.size);
+  let query = {};
+  query.skip = size * pageNo;
+  query.limit = size;
+
+  DepartmentModel.count({}, function (err, count) {
     if (err) {
-      res.status(400).json({ error: true, message: err });
+      response = { error: true, message: "Error fetching data" };
     } else {
-      const count = data?.length;
-      res.status(200).json({
-        error: false,
-        message: "fetch data successfully",
-        data: data,
-        count: count,
+      DepartmentModel.find({}, {}, query, (err, data) => {
+        console.log(data);
+        if (err) {
+          res.status(400).json({ error: true, message: err });
+        } else {
+          res.status(200).json({
+            error: false,
+            message: "fetch data successfully",
+            data: data,
+            count: count,
+          });
+        }
       });
     }
   });
