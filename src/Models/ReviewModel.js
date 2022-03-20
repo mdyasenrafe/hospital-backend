@@ -13,9 +13,6 @@ const ReviewSchema = new Schema({
   phoneNumber: {
     type: String,
   },
-  email: {
-    type: String,
-  },
   role: {
     type: String,
   },
@@ -25,6 +22,9 @@ const ReviewSchema = new Schema({
   status: {
     type: String,
     default: "pending",
+  },
+  rating: {
+    type: String,
   },
 });
 
