@@ -1,7 +1,7 @@
-const userModel = require("../Models/UserModel");
+const UserModel = require("../Models/UserModel");
 
 exports.PostUser = async (req, res) => {
-  userModel.create(req.body, (err, data) => {
+  UserModel.create(req.body, (err, data) => {
     if (err) {
       res.status(400).json({
         error: true,
@@ -17,7 +17,7 @@ exports.PostUser = async (req, res) => {
   });
 };
 exports.GetUser = async (req, res) => {
-  userModel.findOne(
+  UserModel.findOne(
     { id: req.body._id, email: req.body.email },
     (err, data) => {
       if (err) {
