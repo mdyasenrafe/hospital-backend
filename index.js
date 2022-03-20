@@ -9,6 +9,7 @@ const departmentRoute = require("./src/Routes/DepartmentRoute");
 const doctorRoute = require("./src/Routes/DoctorRoute");
 const reviewRoute = require("./src/Routes/ReviewRoute");
 const userRoute = require("./src/Routes/UserRoute");
+const cartRoute = require("./src/Routes/CartRoute");
 
 require("dotenv").config();
 const port = process.env.PORT || 5001;
@@ -46,6 +47,7 @@ app.use("/departments", departmentRoute);
 app.use("/review", reviewRoute);
 app.use("/doctor", doctorRoute);
 app.use("/user", userRoute);
+app.use("/cart", cartRoute);
 // first route
 app.get("/", (req, res) => {
   res.send("This is Medicare server");
