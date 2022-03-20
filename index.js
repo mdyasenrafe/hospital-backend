@@ -42,16 +42,15 @@ app.all("*", function (req, res, next) {
 
 // routing
 app.use("/departments", departmentRoute);
-
+// first route
+app.get("/", (req, res) => {
+  res.send("This is Medicare server");
+});
 // Undefined Route Implement
 app.use((req, res, next) => {
   res
     .status(404)
     .json({ status: 404, error: true, message: "Not Found this route" });
-});
-// first route
-app.get("/", (req, res) => {
-  res.send("This is Medicare server");
 });
 
 //   test
