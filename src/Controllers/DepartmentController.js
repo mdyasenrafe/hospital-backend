@@ -41,12 +41,12 @@ exports.getDepartment = async (req, res) => {
   });
 };
 exports.singleDepartmet = (req, res) => {
-  console.log(req.body._id);
-  DepartmentModel.findOne({ _id: req.body._id }, (err, data) => {
+  DepartmentModel.findOne({ _id: req?.body?._id }, (err, data) => {
+    console.log(err, data);
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {
-      if (data._id) {
+      if (data?._id) {
         res.status(200).json({
           error: false,
           message: "fetch data successfully",
