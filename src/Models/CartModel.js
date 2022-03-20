@@ -28,6 +28,14 @@ const CartSchema = new Schema({
   totalfee: {
     type: String,
   },
+  date: {
+    type: Date,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
 });
 
 const CartModel = mongoose.model("cart", CartSchema);
