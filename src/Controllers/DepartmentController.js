@@ -18,10 +18,12 @@ exports.getDepartment = (req, res) => {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {
+      const count = data?.length;
       res.status(200).json({
         error: false,
         message: "fetch data successfully",
         data: data,
+        count: count,
       });
     }
   });
