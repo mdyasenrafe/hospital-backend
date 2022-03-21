@@ -22,10 +22,9 @@ exports.getDepartment = async (req, res) => {
 
   DepartmentModel.count({}, function (err, count) {
     if (err) {
-      response = { error: true, message: "Error fetching data" };
+      res.status(400).json({ error: true, message: err });
     } else {
       DepartmentModel.find({}, {}, query, (err, data) => {
-        console.log(data);
         if (err) {
           res.status(400).json({ error: true, message: err });
         } else {
