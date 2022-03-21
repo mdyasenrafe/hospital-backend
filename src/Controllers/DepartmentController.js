@@ -57,15 +57,14 @@ exports.singleDepartmet = (req, res) => {
     }
   });
 };
-exports.updateDepartment = (req, res) => {};
 exports.deleteDepartment = (req, res) => {
-  DepartmentModel.deleteOne({ _id: req.body.id }, (err, data) => {
+  DepartmentModel.deleteOne({ _id: req.body?._id }, (err, data) => {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {
       res.status(200).json({
         error: false,
-        message: "deleted succesfull",
+        message: "deleted successfully",
         data: data,
       });
     }
