@@ -32,7 +32,7 @@ exports.getCart = async (req, res) => {
             error: false,
             message: "fetch data successfully",
             data: data,
-            count: count.length,
+            count: count,
           });
         }
       });
