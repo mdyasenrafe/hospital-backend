@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.get("/getDoctor", getDoctor);
 router.post("/addDoctor", addDoctor);
-router.post("/deleteDoctor", deleteDoctor);
+// router.post("/deleteDoctor", deleteDoctor);
 
 module.exports = router;

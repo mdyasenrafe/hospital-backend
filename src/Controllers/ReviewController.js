@@ -34,4 +34,33 @@ exports.addReview = (req, res) => {
     }
   });
 };
-exports.deleteReview = (req, res) => {};
+exports.deleteReview = (req, res) => {
+  ReviewModel.deleteOne({ _id: req.body?._id }, (err, data) => {
+    if (err) {
+      res.status(400).json({ error: true, message: err });
+    } else {
+      res.status(200).json({
+        error: false,
+        message: "Deleted successfully",
+        data: data,
+      });
+    }
+  });
+};
+exports.UpdateReview = (req, res) => {
+  ReviewModel.updateOne(
+    { _id: req.body?._id },
+    { $set: { status: "appoved" } },
+    (err, data) => {
+      if (err) {
+        res.status(400).json({ error: true, message: err });
+      } else {
+        res.status(200).json({
+          error: false,
+          message: "Apporved successfully",
+          data: data,
+        });
+      }
+    }
+  );
+};

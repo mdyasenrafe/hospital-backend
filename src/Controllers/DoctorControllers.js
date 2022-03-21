@@ -34,5 +34,3 @@ exports.addDoctor = (req, res) => {
     }
   });
 };
-exports.deleteDoctor = (req, res) => {};
-exports.getDoctor = (req, res) => {};
