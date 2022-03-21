@@ -66,7 +66,7 @@ exports.allCart = async (req, res) => {
   });
 };
 exports.deleteCart = async (req, res) => {
-  CartModel.deleteOne({ email: req.body?.email }, (err, data) => {
+  CartModel.deleteOne({ _id: req.body?._id }, (err, data) => {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {

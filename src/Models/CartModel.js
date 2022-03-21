@@ -36,6 +36,10 @@ const CartSchema = new Schema({
     type: String,
     required: true,
   },
+  status: {
+    type: String,
+    default: "pending",
+  },
 });
 
 const CartModel = mongoose.model("cart", CartSchema);
