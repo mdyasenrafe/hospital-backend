@@ -20,9 +20,6 @@ const Department = new Schema({
   treatment: {
     type: String,
   },
-  symptoms: {
-    type: Array,
-  },
   shortDescription: {
     type: String,
     required: true,

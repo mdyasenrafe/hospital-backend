@@ -10,8 +10,7 @@ const router = express.Router();
 
 router.get("/getDepartment", getDepartment);
 router.post("/postDepartment", postDepartment);
-router.put("/updateDepartment", updateDepartment);
-router.delete("/deleteDepartment", deleteDepartment);
+router.post("/deleteDepartment", deleteDepartment);
 router.post("/singleDepartment", singleDepartmet);
 
 module.exports = router;
