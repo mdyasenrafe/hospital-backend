@@ -10,6 +10,6 @@ const router = express.Router();
 router.post("/postUser", PostUser);
 router.post("/getUser", GetUser);
 router.put("/updateUser", updateUser);
-router.put("/makeadmin", makeAdmin);
+router.post("/makeadmin", makeAdmin);
 
 module.exports = router;
