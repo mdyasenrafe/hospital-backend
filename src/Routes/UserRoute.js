@@ -3,11 +3,13 @@ const {
   PostUser,
   GetUser,
   updateUser,
+  makeAdmin,
 } = require("../Controllers/UserControllers");
 const router = express.Router();
 
 router.post("/postUser", PostUser);
 router.post("/getUser", GetUser);
 router.put("/updateUser", updateUser);
+router.put("/make", makeAdmin);
 
 module.exports = router;

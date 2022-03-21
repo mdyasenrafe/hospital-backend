@@ -55,3 +55,23 @@ exports.updateUser = async (req, res) => {
   //   }
   // });
 };
+exports.makeAdmin = async (req, res) => {
+  UserModel.updateOne(
+    { email: req.body.email },
+    { $set: { role: "admin" } },
+    (err, data) => {
+      if (err) {
+        res.status(400).json({
+          error: true,
+          message: err,
+        });
+      } else {
+        res.status(200).json({
+          error: false,
+          data: data,
+          message: "data fetch successfully",
+        });
+      }
+    }
+  );
+};
