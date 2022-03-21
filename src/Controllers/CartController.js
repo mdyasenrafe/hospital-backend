@@ -20,7 +20,7 @@ exports.getCart = async (req, res) => {
   query.skip = size * pageNo;
   query.limit = size;
 
-  CartModel.count({}, function (err, count) {
+  CartModel.count({ email: req.body?.email }, function (err, count) {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {
