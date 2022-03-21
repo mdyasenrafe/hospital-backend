@@ -8,6 +8,6 @@ const router = express.Router();
 
 router.post("/addReview", addReview);
 router.get("/getReview", getReview);
-router.delete("/deleteReview", deleteReview);
+router.post("/deleteReview", deleteReview);
 
 module.exports = router;

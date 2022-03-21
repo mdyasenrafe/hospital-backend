@@ -10,9 +10,6 @@ const ReviewSchema = new Schema({
     type: String,
     required: true,
   },
-  phoneNumber: {
-    type: String,
-  },
   role: {
     type: String,
   },
