@@ -56,9 +56,11 @@ exports.updateUser = async (req, res) => {
   // });
 };
 exports.makeAdmin = async (req, res) => {
+  const options = { upsert: true };
   UserModel.updateOne(
     { email: req.body.email },
     { $set: { role: "admin" } },
+    options,
     (err, data) => {
       if (err) {
         res.status(400).json({
