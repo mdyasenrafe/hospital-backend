@@ -20,7 +20,7 @@ exports.getCart = async (req, res) => {
   query.skip = size * pageNo;
   query.limit = size;
 
-  CartModel.count({ email: req.body?.email }, function (err, count) {
+  CartModel.find({ email: req.body?.email }, function (err, count) {
     if (err) {
       res.status(400).json({ error: true, message: err });
     } else {
@@ -32,7 +32,7 @@ exports.getCart = async (req, res) => {
             error: false,
             message: "fetch data successfully",
             data: data,
-            count: count,
+            count: count.length,
           });
         }
       });
